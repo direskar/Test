@@ -1,0 +1,16 @@
+rate = 10.5
+overtime_rate = 1.5 * rate
+overtime_crazy_rate = 2.25 * rate
+normal_hours = 40
+crazy_hours = 80
+
+x = float(input("Input: "))
+if x <= normal_hours:
+    y = x * rate
+elif x > normal_hours and x <= crazy_hours:
+    y = normal_hours*rate + overtime_rate*(x-normal_hours)
+elif x > crazy_hours:
+    y = normal_hours*rate + overtime_rate*(crazy_hours-normal_hours)\
+        + overtime_crazy_rate*(x-crazy_hours)
+
+print(y)
